@@ -1,5 +1,5 @@
 # py-ads1256
-Python Library with wrapers to read 8 channels from the Texas Instruments ADS1256 ADC.  
+Python3 Library with wrapers to read 8 channels from the Texas Instruments ADS1256 ADC.  
 It does make use of the original WaveShare's C library for the [High-Precision_AD/DA_Board 24 Bits] (http://www.waveshare.com/wiki/High-Precision_AD/DA_Board) 
 
 ## Installation
@@ -24,16 +24,16 @@ After this, run the following commands on a Raspberry Pi or other Debian-based O
     cd ~
     git clone https://github.com/fabiovix/py-ads1256.git
     cd py-ads1256
-    sudo python setup.py install
+    sudo python3 setup.py install
 
 
 ## Testing
 
 Please run one of these to test
 
-    python read_example.py
-    python read_volts_example.py
-    python datalogger_example.py 
+    python3 read_example.py
+    python3 read_volts_example.py
+    python3 datalogger_example.py 
  
 
 
@@ -114,7 +114,7 @@ The 2d5 SPS equals to 2.5 (it's a nomenclature issue from the original C code. I
     It keeps reading all the ads1256 channels in absolute and voltage values and saving to a CSV file until a break from the user
     To test it, run the following:
 
-    python datalogger_example.py
+    python3 datalogger_example.py
 
 
 
