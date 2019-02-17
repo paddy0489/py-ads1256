@@ -3,7 +3,7 @@
 
 /* Docstrings */
 static char module_docstring[] =
-    "Esta biblioteca é um wrapper ";
+    "ads1256 library wrapper";
 
 /* Available functions */
 static PyObject *adc_read_channel(PyObject *self, PyObject *args);
@@ -14,21 +14,20 @@ static PyObject *adc_stop(PyObject *self, PyObject *args);
 /* Module specification */
 static PyMethodDef module_methods[] = {
  //   {"chi2", chi2_chi2, METH_VARARGS, chi2_docstring},
-    {"read_channel", adc_read_channel, METH_VARARGS, {"lê o canal especificado do ads1256"}},
-    {"read_all_channels", adc_read_all_channels, METH_VARARGS, {"lê todos os 8 canais do ads1256"}},
-    {"start", adc_start, METH_VARARGS, {"inicia e configura o ads1256"}},
-    {"stop", adc_stop, 0, {"termina e fecha o ads1256"}},
+    {"read_channel", adc_read_channel, METH_VARARGS, {"reads the specified channel from the ads1256"}},
+    {"read_all_channels", adc_read_all_channels, METH_VARARGS, {"reads all 8 channels of the ads1256"}},
+    {"start", adc_start, METH_VARARGS, {"starts and sets the ads1256"}},
+    {"stop", adc_stop, METH_VARARGS, {"ends and closes ads1256"}},
     {NULL, NULL, 0, NULL}
 };
 
-/* Initialize the module */
-PyMODINIT_FUNC initads1256(void)
-{
-    PyObject *m = Py_InitModule3("ads1256", module_methods, module_docstring);
-    if (m == NULL)
-        return;
-
-}
+static struct PyModuleDef ads1256 = {
+    PyModuleDef_HEAD_INIT,
+    "ads1256", /* name of module */
+    NULL, /* module documentation, may be NULL */
+    -1,   /* size of per-interpreter state of the module, or -1 if the module keeps state in global variables. */
+    module_methods
+};
 static PyObject *adc_start(PyObject *self, PyObject *args)
 {
 

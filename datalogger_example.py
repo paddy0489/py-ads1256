@@ -33,7 +33,7 @@ with open(filename,"w") as file:        						# With the opened file...
 i = 0 
 ch= [0,0,0,0,0,0,0,0]
 
-print ("ADS1256 Voltage Data Logger" + "\n" + "GAIN: " + str(gain) + "    SPS: " + str(sps)  + "   FILENAME:  " + filename + "\n")
+print("ADS1256 Voltage Data Logger" + "\n" + "GAIN: " + str(gain) + "    SPS: " + str(sps)  + "   FILENAME:  " + filename + "\n")
 
 
 with open(filename,"a") as file:           # Open the file into Append mode (enter data without erase previous data)
@@ -50,7 +50,7 @@ with open(filename,"a") as file:           # Open the file into Append mode (ent
                 for x in range(0, 8):
                     chv[x] = (((ch[x] * 100) /167.0)/int(gain))/1000000.0   # Fill the second list  with the voltage values
 
-                print str(chv[0]) + " " + str(chv[1]) + " " + str(chv[2]) + " " + str(chv[3]) + " " + str(chv[4]) + " " + str(chv[5]) + " " + str(chv[6])+ " " + str(chv[7])
+                print(str(chv[0]) + " " + str(chv[1]) + " " + str(chv[2]) + " " + str(chv[3]) + " " + str(chv[4]) + " " + str(chv[5]) + " " + str(chv[6])+ " " + str(chv[7]))
 
                 # Registra efetivamente no arquivo .CSV  (no padrao americano)
                 file.write(str(row_id) 
